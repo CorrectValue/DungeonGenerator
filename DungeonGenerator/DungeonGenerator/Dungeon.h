@@ -18,7 +18,7 @@ class Dungeon
 	Texture mapTex;//текстура карты
 	Sprite mapSpr;
 
-	String TileMap[height][width]; //change to boolean
+	bool TileMap[height][width]; 
 public:
 	Dungeon();
 	void generateBSP();

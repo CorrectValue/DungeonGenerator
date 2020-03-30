@@ -12,7 +12,8 @@ void main()
 	//generate dungeon using desirable algorithm
 	Dungeon dng;
 	dng.prepareMap();
-	dng.generateCellular();
+	dng.generateTunnels();
+	//dng.generateCellular();
 	//visualize generated dungeon
 	while (window.isOpen())
 	{
