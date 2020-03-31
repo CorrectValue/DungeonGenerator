@@ -5,7 +5,7 @@ using namespace sf;
 void main()
 {
 	View view(FloatRect(0, 0, 1600, 1600));
-	RenderWindow window(sf::VideoMode(1024, 768), "GETTING STARTED");
+	RenderWindow window(sf::VideoMode(1024, 1024), "GETTING STARTED");
 
 	//get user opinion on desirable generation algorithm
 

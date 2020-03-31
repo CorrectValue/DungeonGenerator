@@ -38,18 +38,24 @@ void Dungeon::generateTunnels()
 		if (TileMap[i][j] == 1)
 			floorTiles--;
 		TileMap[i][j] = 0;
+		bool flag; //for iterations
 		do{
 			//take a step 
 			//i wonder if I can figure out a more elegant way
+			flag = 0;
 			int rnd = rand() % 2;
 			dxdy[rnd] = rand() % 2;
 			if (dxdy[rnd] == 0)
 				dxdy[rnd] = -1; //stupid.
-			i += dxdy[0];
-			j += dxdy[1];
+			if (i + dxdy[0] > 0 && i + dxdy[0] < height && j + dxdy[1] > 0 && j + dxdy[1] < width) //check first
+			{
+				i += dxdy[0];
+				j += dxdy[1];
+				flag = 1;
+			}
 			dxdy[rnd] = 0; //truncate back again
 			//check if we did not step on the border, otherwise - turn another direction
-		} while ((i == 0 || i == height) || (j == 0 || j == width));
+		} while (!flag);
 
 	} while (floorTiles > 0);
 }
